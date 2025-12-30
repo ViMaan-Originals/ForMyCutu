@@ -146,7 +146,7 @@ startMusic("https://files.catbox.moe/z4l8j0.mp3");
 
  preloadImages([
   "https://files.catbox.moe/sxm6bz.webp",
-  "https://files.catbox.moe/evdhja.png"
+  "https://res.cloudinary.com/dneca52hi/image/upload/v1767106157/assets/Aesthetic-Wallpaper-For-Laptop-Wallpaper_fyf0ps.png"
 ]);
 
 }
@@ -754,4 +754,5 @@ if (now.getFullYear() === 2026 && now.getDate() >= 19) {
     document.title = "Happy Birthday Saloni! 🎉";
   } else {
     document.title = "ForMyCutu";
+
   }
