@@ -854,7 +854,7 @@ background-size:contain;
       padding: 5px;
     }
     .rightSection {
-      background: rgba(37, 37, 37, 0.784) url(pattern.png);
+      background: rgba(37, 37, 37, 0.784) url("https://res.cloudinary.com/dneca52hi/image/upload/v1767111191/assets/pattern_bxwq6s.png");
       background-repeat: repeat;
       background-size: contain;
       width: 50%;
@@ -1144,3 +1144,4 @@ background-size:contain;
   right: 5px;
 
 }
+
