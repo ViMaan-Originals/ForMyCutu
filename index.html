@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Saloni</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_forward_ios" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_back_ios" />
+    <link href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div id="loading-screen">
+    Loading your surprise...
+    <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+
+    
+    <div id="orientationContainer" >
+        
+            <h2>Turn Your Screen</h2>
+            <img src="https://files.catbox.moe/lpl3uc.png" alt="rotate" width="10%">
+    </div>
+
+    
+        <div class="Countdown-Containor" id="Countdown-Containor">
+
+            <div class="wing right"></div>
+            <div class="wing left"></div>
+            <div class="heart">
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#e83b3b" stroke="#e83b3b" stroke-width="0.00048000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>heart-like-solid</title> <g id="Layer_2" data-name="Layer 2"> <g id="invisible_box" data-name="invisible box"> <rect width="48" height="48" fill="none"></rect> </g> <g id="icons_Q2" data-name="icons Q2"> <path d="M34,4c-3.9,0-8,3.1-10,6.5C22,7.1,17.9,4,14,4A12,12,0,0,0,5.5,7.6,11.9,11.9,0,0,0,2,16.1c0,4.1,2.7,7.6,5,10.2L23.3,43.7a1,1,0,0,0,1.4,0L41,26.3c2.3-2.6,5-6.1,5-10.2A12.1,12.1,0,0,0,34,4Z"></path> </g> </g> </g></svg>
+            </div>
+            
+            <button id="startParty" class="startParty" onclick= " enterFullscreen(), triggerConfetti()">cLick Me</button>
+            <div class="para" id="para"><center><p>The World Gets Brighter In..</p></center></div>
+            
+            <div class="countdown">
+                <center><p id="countdown">Loading countdown...</p></center>
+            
+            </div>
+            <div id="envelope">
+            
+            
+            <div class="top"></div>
+              
+              <div class="sides"></div>
+            
+             
+            </div>
+               
+            <div class="datetime">
+                <p id="dateTime"></p>
+            </div>
+
+
+            <div class="draggableMusicCard" id="popupMusicCard">
+    <div class="dragMusicHeader">
+      &nbsp;
+      <button class="Musicminimize-btn" onclick="minimizeMusicCard()" >−</button>
+    </div>
+    <div class="card-content">
+      <div class="player">
+    <div class="song-title" id="songTitle">Loading...</div>
+
+    <audio id="countdownAudio"></audio>
+
+        <div class="musicSliderContainer">
+      <input type="range" id="slider" class="musicSlider" value="0" step="1">
+      <div class="time">
+        <span id="current">0:00</span>
+        <span id="duration">0:00</span>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="restart()"><svg xmlns="http://www.w3.org/2000/svg" style="color: #ffe8d6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw-icon lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg></button>
+      <div class="mainbtns">
+        <button onclick="prevSong()"><svg xmlns="http://www.w3.org/2000/svg" style="color: #ffe8d6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-first-icon lucide-chevron-first"><path d="m17 18-6-6 6-6"/><path d="M7 6v12"/></svg></button>
+      
+    <button id="playPause">
+      <svg xmlns="http://www.w3.org/2000/svg"  width="38" height="38" viewBox="0 0 24 24" id="playBtn" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-play-icon lucide-circle-play"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="38" height="38" display="none" viewBox="0 0 24 24" id="pauseBtn" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-pause-icon lucide-circle-pause"><circle cx="12" cy="12" r="10"/><line x1="10" x2="10" y1="15" y2="9"/><line x1="14" x2="14" y1="15" y2="9"/></svg>
+    </button>
+      
+    <button onclick="nextSong()"> <svg xmlns="http://www.w3.org/2000/svg" style="color: #ffe8d6" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-last-icon lucide-chevron-last"><path d="m7 18 6-6-6-6"/><path d="M17 6v12"/></svg></button>
+      </div>
+      
+      <button onclick="togglePlaylist()"><svg xmlns="http://www.w3.org/2000/svg" style="color: #ffe8d6" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-music-icon lucide-list-music"><path d="M21 15V6"/><path d="M18.5 18a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/><path d="M12 12H3"/><path d="M16 6H3"/><path d="M12 18H3"/></svg></button>
+    </div>
+
+    
+
+    <!-- Playlist Box -->
+    <div class="playlist" id="playlistBox">
+      <h3>Playlist</h3>
+      <ul id="playlist"></ul>
+    </div>
+  </div>
+
+    </div>
+
+    <div class="card-controls">
+</div>
+  </div>
+           <div class="restore-tab" id="showMusicCardBtn" onclick="showMusicCard()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-music2-icon lucide-music-2"><circle cx="8" cy="18" r="4"/><path d="M12 18V2l7 4"/></svg></div>
+          
+          
+ <!--Message Tab-->
+
+  <div class="draggableMessageCard" id="popupMessageCard">
+
+    <button class="Msgminimize-btn" onclick="minimizeMsgCard()" >&#9746;</button>
+    
+    <div class="leftSection">
+      
+      <div class="circle">
+    <svg>
+      <circle class="bg" cx="100" cy="100" r="60" ></circle>
+      <circle class="progress" cx="100" cy="100" r="60"></circle>
+    </svg>
+    <div class="text"></div>
+    <div class= "subtext" id="subtext"></div>
+   
+    </div>
+
+    <div class="stats">
+      <p>&#9737; <span id="beats">0</span> heartbeats since birth💓</p>
+      <p>&#9737; <span id="sunrises">0</span> sunrises seen 🌞</p>
+      <p>&#9737; <span id="bloodLiters">0</span> of blood pumped 🩸</span></p>
+    </div>
+</div>
+    <div class="rightSection">
+      
+      <div class="messages" id="messages">
+        <!-- Messages will be dynamically added here -->
+         
+    </div>
+  
+    
+    </div>
+
+
+
+
+    </div>
+
+        <div class="message-tab" id="showMsgBtn" onclick="showMsgCard()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" color="white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square-text-icon lucide-message-square-text"><path d="M22 17a2 2 0 0 1-2 2H6.828a2 2 0 0 0-1.414.586l-2.202 2.202A.71.71 0 0 1 2 21.286V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2z"/><path d="M7 11h10"/><path d="M7 15h6"/><path d="M7 7h8"/></svg><path d="M12 18V2l7 4"/></svg>
+        </div>
+      
+      
+      </div>
+                
+          
+          
+<!--wishpage--->
+
+  <div class="bWishContainer" id="bWishContainer">
+
+            <div class="wish-text" id="wishText">
+                 <h1>HAPPY BIRTHDAY</h1>&nbsp;<h1>Saloni</h1> 
+                 <div class="year">19</div>
+            </div>
+          <p id="smileText">Its yo bday bbygirl !! Smile ;))</p>
+
+
+
+
+          
+          <button id="WishtoLetterButton" class="WishtoLetterButton" onclick="toLetterPage()">
+        <i class="fa-solid fa-chevron-right" style="font-size: 1.5em;"></i>    
+        </button>
+             
+        
+        </div>
+
+        <!---Letter Page-->
+
+        <div class="letterContainer" id="letterContainer" >
+	<div class="Letter fade-in" id="Letter" >
+		 <p style="font-weight: bold; font-size: 20px;" >Dear Saloni,</p>
+		 <p style="font-size: 2em">Wish you a very happy birthday</p>
+		 <p style="width: 60%" id="letterText"></p>
+
+		 <div style="display: flex; flex-direction: row;"><p style="font-weight: bolder;">With a lots of<p style="color: red">&nbsp ❤</p></p></div>
+		 <p style="font-weight: bold; margin-top: -1em">Your Viveku</p>
+
+	</div>
+
+    <button id="LettertoWishButton" class="LettertoWishButton" onclick="toWishPage()">
+        <i class="fa-solid fa-chevron-left" style="font-size: 1.5em;"></i>  
+    </button>
+
+    <button id="LettertoCardButton" class="LettertoCardButton" onclick="toCardPage() ">
+        <i class="fa-solid fa-chevron-right" style="font-size: 1.5em;"></i>  
+    </button>
+
+ 
+
+</div>
+
+<!---Card Page-->
+<div class="cardContainer" id="cardContainer">
+  <div class="cardBackgroundText" id="cardBackgroundText">Open this baby</div>
+<div class="flipbook" id="flipbook">
+    <div class="hard" >
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104638/assets/pg1_eubbbc.png" alt="" />
+    </div>
+    <div class="hard" >
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104641/assets/pg2_autafd.png" alt="" />
+    </div>
+    <div>
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104638/assets/pg3_u806xp.png" alt="" />
+    </div>
+    <div>
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104636/assets/pg4_rxn4p7.png" alt="" />
+    </div>
+    <div class="hard">
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104647/assets/pg5_zijxe9.png" alt="" />
+    </div>
+    <div class="hard">
+      <img src="https://res.cloudinary.com/dneca52hi/image/upload/v1767104638/assets/pg6_fpvqiu.png" alt="" />
+    </div>
+  </div>
+
+   <button id="CardtoLetterButton" class="CardtoLetterButton" onclick="toLetterPage() ">
+        <i class="fa-solid fa-chevron-left" style="font-size: 1.5em;"></i>  
+    </button>
+
+    <button id="CardtoVideoMsgButton" class="CardtoVideoMsgButton" onclick="toVideoMsgPage() ">
+        <i class="fa-solid fa-chevron-right" style="font-size: 1.5em;"></i>  
+    </button> 
+
+
+    
+</div>
+
+<!---video msg page-->
+<div class="videoMsgContainer" id="videoMsgContainer">
+    <video id="videoMessage" width="100%" height="100%" controls>
+        <source src="large.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <button id="VideoMsgtoCardButton" class="VideoMsgtoCardButton" onclick="toCardPage() ">
+        <i class="fa-solid fa-chevron-left" style="font-size: 1.5em;"></i>  
+    </button>
+
+    <button id="VideoMsgtoClosureButton" class="VideoMsgtoClosureButton" onclick="toClosurePage() ">
+        <i class="fa-solid fa-chevron-right" style="font-size: 1.5em;"></i>  
+    </button> 
+</div>
+
+<!--Closure Page-->
+<div class="closureContainer" id="closureContainer">
+    <div class="closureText">
+        <h1>Its not the end, Its the beginning ;)</h1>
+        <h3>Here's to many more birthdays and memories together!</h3> 
+        <h3>I hope it brought a smile to ur face</h3>
+        <h4>Enjoy your day and eat a lots of cake heh</h4>
+        <h4>I Love You</h4>
+        <h4>Happy Birthday</h4>
+        <h4>- Viveku</h4>
+    </div>
+    <div style="position: absolute;
+    bottom: 10px;
+    right: 4%;">
+          <p>created with ❤ for my Cutu</p>
+        </div>
+
+<button id="VideoMsgtoCardButton" class="VideoMsgtoCardButton" onclick="toVideoMsgPage() ">
+        <i class="fa-solid fa-chevron-left" style="font-size: 1.5em;"></i>  
+    </button>    
+
+</div>
+
+
+    
+        <audio id="bgMusic" autoplay loop>
+            <source id="audioSource" src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+
+        <script src="jquery.js"></script>
+        <script src="turn.js"></script>
+          <script src="script.js"></script>
+          <script type="text/javascript">
+$(document).ready(function () {
+    const $flip = $(".flipbook");
+
+    $flip.turn({
+          width: $(".flipbook").width(),
+    height: $(".flipbook").height(),
+        autoCenter: true,
+        display: window.innerWidth <= 768 ? 'single' : 'double',
+        elevation: 50,
+        gradients: true,
+        acceleration: true
+    });
+});
+
+          </script>
+</body>
+</html>
