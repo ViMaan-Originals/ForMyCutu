@@ -472,7 +472,7 @@ border-radius: 30px;
 #letterContainer{
 	display: none;
     font-family: "Delius", cursive;
-    background-image: url("https://files.catbox.moe/mf6wjf.png");
+    background-image: url("https://res.cloudinary.com/dneca52hi/image/upload/v1767106157/assets/Aesthetic-Wallpaper-For-Laptop-Wallpaper_fyf0ps.png");
 	align-items: center;
     background-size: cover;
     background-repeat: repeat-x;
@@ -1142,4 +1142,5 @@ background-size:contain;
   position: absolute;
   width: 50%;
   right: 5px;
+
 }
