@@ -90,7 +90,7 @@ window.addEventListener("load", checkOrientation);
 
 
 //Countdown Timer
-const targetDate = new Date("2020-01-19T00:00:00").getTime();
+const targetDate = new Date("2026-01-19T00:00:00").getTime();
 
 const countdownInterval = setInterval(() => {
 const now = new Date().getTime();
@@ -756,3 +756,4 @@ if (now.getFullYear() === 2026 && now.getDate() >= 19) {
     document.title = "ForMyCutu";
 
   }
+
